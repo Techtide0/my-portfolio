@@ -225,7 +225,7 @@ const Portfolio = () => {
             </p>
             <div className="social-links animate-scale-in">
               <a
-                href="https://github.com/Osenimatthew/"
+                href="https://github.com/Techtide0/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon animate-glow"
