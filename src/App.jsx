@@ -10,6 +10,8 @@ import {
   Facebook,
 } from "lucide-react";
 import myPic from "./assets/images/matthew.png";
+import Skills from "./Skills";
+import ProjectsSection from "./ProjectsSection";
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -129,21 +131,6 @@ const Portfolio = () => {
     },
   ];
 
-  const skills = [
-    "React.js",
-    "React Native",
-    "JavaScript (ES6+)",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "HTML5",
-    "CSS3",
-    "Tailwind CSS",
-    "REST APIs",
-    "Git",
-    "Responsive Design",
-  ];
-
   return (
     <div className="portfolio-container">
       {/* Navigation */}
@@ -228,7 +215,7 @@ const Portfolio = () => {
               </h1>
               <h2 className="hero-subtitle">
                 <span className="subtitle-pink">Frontend Developer</span> &{" "}
-                <span className="subtitle-purple">Full-Stack Engineer</span>
+                <span className="subtitle-purple">Full-Stack Developer</span>
               </h2>
             </div>
             <p className="hero-description">
@@ -300,9 +287,9 @@ const Portfolio = () => {
           <div className="about-grid">
             <div className="about-text animate-slide-in-left">
               <p className="about-paragraph">
-                I'm a dedicated frontend developer with a strong passion for
-                creating visually compelling and user-friendly web applications.
-                Having recently graduated from the{" "}
+                I am a dedicated full-stack developer passionate about building
+                visually appealing, intuitive, and user-friendly web
+                applications. Having recently graduated from the{" "}
                 <span className="highlight-purple">ALX program</span>, I've
                 honed my skills in modern web technologies with a focus on
                 efficient coding practices.
@@ -328,76 +315,14 @@ const Portfolio = () => {
               </p>
             </div>
             <div className="skills-container animate-slide-in-right">
-              <h3 className="skills-title">Technical Skills</h3>
-              <div className="skills-grid">
-                {skills.map((skill, index) => (
-                  <span key={index} className="skill-tag">
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <Skills />
             </div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="projects-section">
-        <div className="section-content">
-          <h2 className="section-title gradient-text animate-gradient">
-            Featured Projects
-          </h2>
-          <p className="section-subtitle animate-fade-in">
-            A selection of my recent work
-          </p>
-
-          <div className="projects-grid">
-            {projects.map((project, index) => (
-              <div key={index} className="project-card">
-                {project.type && (
-                  <span className="project-badge btn-gradient animate-gradient">
-                    {project.type}
-                  </span>
-                )}
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-subtitle">{project.subtitle}</p>
-                <p className="project-description">{project.description}</p>
-                <div className="project-tags">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="project-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                {project.links && (
-                  <div className="project-links">
-                    {project.links.github && (
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-link link-purple"
-                      >
-                        <Github size={16} /> Code
-                      </a>
-                    )}
-                    {project.links.live && (
-                      <a
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-link link-pink"
-                      >
-                        <ExternalLink size={16} /> Live
-                      </a>
-                    )}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProjectsSection projects={projects} />
 
       {/* Contact Section */}
       <section id="contact" className="contact-section">
