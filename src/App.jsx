@@ -331,7 +331,7 @@ const Portfolio = () => {
             Let's Work Together
           </h2>
           <p className="contact-subtitle animate-fade-in">
-            I'm always interested in hearing about new projects and
+            I am always interested in hearing about new projects and
             opportunities.
           </p>
           <div className="contact-grid">
